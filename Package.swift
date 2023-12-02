@@ -13,10 +13,11 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/attaswift/BigInt.git", exact: "5.3.0"),
-        .package(url: "https://github.com/anquii/BigIntExtensions.git", exact: "0.1.0")
+        .package(url: "https://github.com/anquii/BigIntExtensions.git", exact: "0.1.0"),
+        .package(url: "https://github.com/anquii/BinaryExtensions.git", exact: "0.1.1")
     ],
     targets: [
-        .target(name: "ERC2333", dependencies: ["BigInt"]),
+        .target(name: "ERC2333", dependencies: ["BigInt", "BinaryExtensions"]),
         .testTarget(name: "ERC2333Tests", dependencies: ["ERC2333", "BigIntExtensions"])
     ]
 )

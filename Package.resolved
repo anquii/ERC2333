@@ -14,8 +14,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/anquii/BigIntExtensions.git",
       "state" : {
-        "revision" : "cc15789436c93fdd40adfb52212da32353fb8ccd",
+        "revision" : "1d960373cc9817e0949ab7c7d7719b62bcaf09c7",
         "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "binaryextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/anquii/BinaryExtensions.git",
+      "state" : {
+        "revision" : "ab9c034ab6d6a578fa0e574ef8c1b8d117b8bfc9",
+        "version" : "0.1.1"
       }
     }
   ],

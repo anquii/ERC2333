@@ -2,6 +2,7 @@ import XCTest
 import Foundation
 import BigInt
 import BigIntExtensions
+import BinaryExtensions
 @testable import ERC2333
 
 final class PrivateLamportKeyDerivatorTests: XCTestCase {
@@ -525,10 +526,10 @@ final class PrivateLamportKeyDerivatorTests: XCTestCase {
         let privateKey1 = PrivateLamportKeyDerivator.privateKey(privateParentKey: privateParentKey, salt: salt)
         let privateKey2 = PrivateLamportKeyDerivator.privateKey(privateParentKey: Data(privateParentKey.map { ~$0 }), salt: salt)
         for (index, data) in privateKey1.enumerated() {
-            XCTAssertEqual(BigUInt(data), BigUInt(hex: hexEncodedPrivateKey1[index]))
+            XCTAssertEqual(BigUInt(data), BigUInt(hexEncodedString: hexEncodedPrivateKey1[index]))
         }
         for (index, data) in privateKey2.enumerated() {
-            XCTAssertEqual(BigUInt(data), BigUInt(hex: hexEncodedPrivateKey2[index]))
+            XCTAssertEqual(BigUInt(data), BigUInt(hexEncodedString: hexEncodedPrivateKey2[index]))
         }
     }
 }

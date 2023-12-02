@@ -24,7 +24,7 @@ final class PrivateMasterKeyDerivatorTests: XCTestCase {
         ]
         let sut = self.sut()
         for (index, hexEncodedSeed) in hexEncodedSeeds.enumerated() {
-            let seed = Data(unsignedInteger: BigUInt(hex: hexEncodedSeed)!, minimumLength: 32)
+            let seed = Data(unsignedInteger: BigUInt(hexEncodedString: hexEncodedSeed)!, minimumLength: 32)
             let privateMasterKey = sut.privateKey(seed: seed)
             XCTAssertEqual(BigUInt(privateMasterKey), BigUInt(privateMasterKeys[index]))
         }

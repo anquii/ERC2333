@@ -1,6 +1,7 @@
 import Foundation
-import CryptoKit
 import BigInt
+import BinaryExtensions
+import CryptoKit
 
 struct PrivateKeyDerivator {
     private static let outputByteCount = UInt16(48)
@@ -16,7 +17,7 @@ struct PrivateKeyDerivator {
             .deriveKey(
                 inputKeyMaterial: inputKeyMaterial,
                 salt: salt,
-                info: outputByteCount.bytes,
+                info: outputByteCount.bigEndian.bytes,
                 outputByteCount: Int(outputByteCount)
             )
             .withUnsafeBytes { Data($0) }
